@@ -23,7 +23,7 @@ DATA='n\n%d\n'%n
 DATA+='m\n%d\n'%m
 DATA+='nfac\n%d\n'%-1
 DATA+='tlen\n%d\n'%(tlen)
-DATA+='R\n0\n'
+DATA+='R\n0.02\n'
 DATA+='L\n'
 for kk in range(n):
     DATA+='0 '
@@ -57,17 +57,18 @@ for stock in k.keys():
             prices[tt]=last
             tt+=1
 DATA+='\nDATA\n'
+tk=0
 for st in range(n):
-    tk=st*tlen
     for kk in range(tlen):
         DATA+='%f '%(prices[tk+1]/prices[tk]-1)
         tk+=1
-DATA+='\nlambda\n1e-6'
+    DATA+='\n'
+DATA+='\nlambda\n100'
 DATA+='\nQ\n'
 for kk in range(n*(n+1)/2):
     DATA+='0 '
 DATA+='\nalpha\n \n'
-DATA+='gamma\n0\n'
+DATA+='gamma\n0.5\n'
 DATA+='kappa\n0.5\n'
 DATA+='basket\n-1\n'
 DATA+='delta\n-1\n'
