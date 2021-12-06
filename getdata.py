@@ -18,13 +18,19 @@ history.sort()
 last=0
 n=len(k.keys())
 tlen=len(history)-1
+week = 7*24*60*60
+periodlength=[max(1,(history[i+1]-history[i])/week) for i in range(tlen)]
+#periodlength)
 m=1
 DATA='n\n%d\n'%n
 DATA+='m\n%d\n'%m
 DATA+='nfac\n%d\n'%-1
 DATA+='tlen\n%d\n'%(tlen)
 DATA+='R\n0.02\n'
-DATA+='L\n'
+DATA+='periodlength\n'
+for kk in periodlength:
+    DATA+='%d '%kk
+DATA+='\nL\n'
 for kk in range(n):
     DATA+='0 '
 DATA+='1\n'
@@ -60,14 +66,14 @@ DATA+='\nDATA\n'
 tk=0
 for st in range(n):
     for kk in range(tlen):
-        DATA+='%f '%(prices[tk+1]/prices[tk]-1)
+        DATA+='%f '%((prices[tk+1]/prices[tk]-1)/periodlength[kk])
         tk+=1
     DATA+='\n'
-DATA+='\nlambda\n100'
+DATA+='\nlambda\n1e2'
 DATA+='\nQ\n'
 for kk in range(n*(n+1)/2):
     DATA+='0 '
-DATA+='\nalpha\n \n'
+DATA+='\nalpha\n  \n'
 DATA+='gamma\n0.5\n'
 DATA+='kappa\n0.5\n'
 DATA+='basket\n-1\n'
