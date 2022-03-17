@@ -1,4 +1,4 @@
-curl -X 'GET'   'https://yfapi.net/v8/finance/spark?interval=1d&range=max&symbols=0P00015E7M.l,0P000023C7.L,0P000023CJ.L,0P000023NV.L,0P00002059.L,0P000023C5.L,0P000023HM.L,0P000023CA.L,0P0000HN9B.L'   -H 'accept: application/json'   -H 'X-API-KEY: Tj4xytiRIj86V81DBxqYkaBUapPidKmCa2K5F8Q8'
+curl -X 'GET'   'https://yfapi.net/v8/finance/spark?interval=1d&range=max&symbols=0P00015E7M.l,0P000023C7.L,0P000023CJ.L,0P000023NV.L,0P00002059.L,0P000023C5.L,0P000023HM.L,0P000023CA.L,0P0000HN9B.L'   -H 'accept: application/json'   -H 'X-API-KEY: d8IWnzKRTv9sEnQaUMXNS16jRYpAT89S9m9fNDRK'
 
 #oldkey EinJM0Z7Bf851gYwlMi779B9ImYjkOKB3CWbCPF8
 #oldkey m7KyJZUGxS9HSam0BulnN3wXUSYxGzyC9FGkGbSW
