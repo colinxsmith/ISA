@@ -1,0 +1,4 @@
+bash pricedist |python getdata.py|sed "/^$/d;s/\ $//;s/^\ //" >GLdist
+
+
+python editnames.py 
