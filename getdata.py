@@ -67,7 +67,7 @@ DATA+='\nDATA\n'
 tk=0
 for st in range(n):
     for kk in range(tlen):
-        DATA+='%f '%((prices[tk+1]/prices[tk]-1)/periodlength[kk])
+        DATA+='%.8f '%((prices[tk+1]/prices[tk]-1)/periodlength[kk])
         tk+=1
     DATA+='\n'
 DATA+='\nlambda\n1e2'
