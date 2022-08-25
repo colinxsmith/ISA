@@ -27,7 +27,6 @@ DATA='n\n%d\n'%n
 DATA+='m\n%d\n'%m
 DATA+='nfac\n%d\n'%-1
 DATA+='tlen\n%d\n'%(tlen)
-DATA+='R\n%f\n'%(R)
 DATA+='periodlength\n'
 for kk in periodlength:
     DATA+='%d '%kk
@@ -65,12 +64,16 @@ for stock in k.keys():
             tt+=1
 DATA+='\nDATA\n'
 tk=0
+R=0
 for st in range(n):
     for kk in range(tlen):
+        R+=(prices[tk+1]/prices[tk]-1)/periodlength[kk]
         DATA+='%.16e '%((prices[tk+1]/prices[tk]-1)/periodlength[kk])
         tk+=1
     DATA+='\n'
-DATA+='\nlambda\n1e2'
+R/=float(n*tlen)
+DATA+='\nlambda\n1e2\n'
+DATA+='R\n%f\n'%(R)
 DATA+='\nQQQ\n'
 for kk in range(n*(n+1)/2):
     DATA+='0 '
