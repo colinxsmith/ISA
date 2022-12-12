@@ -4,4 +4,4 @@ bash pricedist |python getdata.py|sed "/^$/d;s/\ $//;s/^\ //" >GLdist
 python editnames.py 
 
 
-get authorisation key from https://financeapi.net/ (not .com!!!!)
+#get authorisation key from https://financeapi.net/ (not .com!!!!)
