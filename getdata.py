@@ -1,5 +1,6 @@
 import time
 import json
+import re
 from sys import stdin
 k=''
 for line in stdin.readlines():
@@ -11,8 +12,13 @@ for stock in k.keys():
     times=k[stock]['timestamp']
     close=k[stock]['close']
     for i in range(len(times)):
-        alltimes[int(times[i])]=i
-        alldata[stock][times[i]]=close[i]
+        stamp=times[i]
+        ttt=time.ctime(stamp)
+        ttt=re.sub('..:..:..','00:00:00',ttt)
+        obb=time.strptime(ttt, "%a %b %d %H:%M:%S %Y")
+        stamp=time.mktime(obb)
+        alltimes[int(stamp)]=i
+        alldata[stock][stamp]=close[i]
 history=[int(i) for i in alltimes.keys()]
 history.sort()
 last=0
