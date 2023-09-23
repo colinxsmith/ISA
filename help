@@ -6,6 +6,6 @@ python editnames.py
 for fund in 0P00015E7M.l 0P000023C7.L 0P000023CJ.L 0P000023NV.L 0P00002059.L 0P000023C5.L 0P000023HM.L 0P000102ML.L 0P0000HN9B.L
 do
 echo $fund
-./yielddata $fund |python3 getyield.py
+bash yielddata $fund |python3 getyield.py
 done
 #get authorisation key from https://financeapi.net/ (not .com!!!!)
