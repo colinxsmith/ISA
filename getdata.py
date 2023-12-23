@@ -53,14 +53,26 @@ for kk in k.keys():
     DATA+='%s '%kk
 prices=[0]*(n*(tlen+1))
 tt=0
+
+
 for stock in k.keys():
-    #print (tt,stock)
+    #print (tt,stock)    
+    for hhhh in range(tlen+1):
+        hhh=history[hhhh]
+        hh=time.ctime(hhh).replace(' 00:00:00','')
+        
+        try:
+                if alldata[stock][hhh]!=0.0:
+                    last=alldata[stock][hhh]
+                    break
+        except:pass
+
     for hhhh in range(tlen+1):
         hhh=history[hhhh]
         hh=time.ctime(hhh).replace(' 00:00:00','')
         try:
             if alldata[stock][hhh]==0.0:alldata[stock][hhh]=last
-            #print ('%s %f' % (hh,alldata[stock][hhh]))
+            #print ('%s %s %f' % (stock,hh,alldata[stock][hhh]))
             last=float(alldata[stock][hhh])
             prices[tt]=alldata[stock][hhh]
             tt+=1

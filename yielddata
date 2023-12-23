@@ -4,4 +4,4 @@ date=$(date +%s)
 curl -X 'GET' \
   "https://yfapi.net/v7/finance/options/$fund?date=$date" \
   -H 'accept: application/json' \
-  -H 'X-API-KEY: dl6c4tTQh9419GRm0JIsT3spcRXDGfz03miP7ju5'
+  -H 'X-API-KEY: auw85JjQykgoeCbtCP9Y6ero10VLYpDSl917f1f0'
