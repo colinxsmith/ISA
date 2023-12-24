@@ -1,7 +1,8 @@
 #!/usr/bin/bash
-fund=${1:-0p000102ml.l}
+lic=$(cat licence)
+fund=${1:-0P0000X7CH.L}
 date=$(date +%s)
 curl -X 'GET' \
   "https://yfapi.net/v7/finance/options/$fund?date=$date" \
   -H 'accept: application/json' \
-  -H 'X-API-KEY: auw85JjQykgoeCbtCP9Y6ero10VLYpDSl917f1f0'
+  -H 'X-API-KEY: '$lic
