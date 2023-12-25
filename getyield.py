@@ -12,5 +12,7 @@ for op in k.keys():
 stock=fund['underlyingSymbol']
 longname=fund['quote']['longName']
 longname=longname.replace(' ','_')
+longname=longname.replace('&','and')
+print (longname)
 system('sed -i "s/%s/%s/" GLdist' % (stock,longname))
 print(fund['underlyingSymbol'],fund['quote']['longName'],fund['quote']['dividendYield'])
