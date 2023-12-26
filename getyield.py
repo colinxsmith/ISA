@@ -16,4 +16,4 @@ longname=longname.replace('&','and')
 #print (longname)
 system('sed -i "s/%s/%s/" GLdist' % (stock,longname))
 try:print(fund['underlyingSymbol'],fund['quote']['longName'],fund['quote']['dividendYield'])
-except:pass
+except:print(fund['underlyingSymbol'],fund['quote']['longName'])
