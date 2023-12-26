@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 lic=$(cat licence)
 fund=${1:-0P0000X7CH.L}
 date=$(date +%s)
