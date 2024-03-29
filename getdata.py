@@ -51,7 +51,7 @@ DATA+='1\n'
 DATA+='names\n'
 for kk in k.keys():
     DATA+='%s '%kk
-prices=[0]*(n*(tlen+1))
+prices=[0]*int(n*(tlen+1))
 tt=0
 
 
