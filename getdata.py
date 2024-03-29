@@ -93,7 +93,7 @@ R/=float(n*tlen)
 DATA+='\nlambda\n1e2\n'
 DATA+='R\n%f\n'%(R)
 DATA+='\nQQQ\n'
-for kk in range(n*(n+1)/2):
+for kk in range(int(n*(n+1)/2)):
     DATA+='0 '
 DATA+='\nQ\n  \n'
 DATA+='\nalpha\n  \n'
