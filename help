@@ -5,6 +5,6 @@ stocks=$(sed "s/,/ /g" stocks)
 
 for fund in $stocks
 do
-./yielddata $fund |python3 getyield.py
+./yielddata $fund |python3 getyield.py >> yields
 done
 #get authorisation key from https://financeapi.net/ (not .com!!!!)
